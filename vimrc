@@ -56,9 +56,9 @@ syntax on
 " ===
 " Better tab
 set expandtab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set list
 set listchars=tab:▸\ ,trail:▫
 set scrolloff=5
@@ -133,13 +133,14 @@ map S :w<CR>
 map <LEADER>rc :e ~/.vim/vimrc<CR>
 
 " Undo operations
-noremap l u
+
+"noremap l u
 " Undo in Insert mode
 inoremap <C-l> <C-u>
 
 " Insert Key
-noremap k i
-noremap K I
+"noremap k i
+"noremap K I
 
 " Copy to system clipboard
 vnoremap Y :w !xclip -i -sel c<CR>
@@ -166,23 +167,24 @@ map <LEADER>o o<Esc>u
 " < n   i >
 "     e
 "     v
-noremap u k
-noremap n h
-noremap e j
-noremap i l
+"noremap u k
+"noremap n h
+"noremap e j
+"noremap i l
+
 " U/E keys for 5 times u/e (faster navigation)
-noremap U 5k
-noremap E 5j
-" N key: go to the start of the line
-noremap N 0
+noremap K 5k
+noremap J 5j
+" 0 key: go to the start of the line
+"noremap N 0
 " I key: go to the end of the line
-noremap I $
+"noremap I $
 
 " Faster in-line navigation
 noremap W 5w
 noremap B 5b
 " set h (same as n, cursor left) to 'end of word'
-noremap h e
+"noremap h e
 
 " Ctrl + U or E will move up/down the view port without moving the cursor
 noremap <C-U> 5<C-y>
@@ -196,10 +198,10 @@ inoremap <C-E> <Esc>5<C-e>a
 " ===
 " Use <space> + new arrow keys for moving the cursor around windows
 map <LEADER>w <C-w>w
-map <LEADER>u <C-w>k
-map <LEADER>e <C-w>j
-map <LEADER>n <C-w>h
-map <LEADER>i <C-w>l
+map <LEADER>k <C-w>k
+map <LEADER>j <C-w>j
+map <LEADER>h <C-w>h
+map <LEADER>l <C-w>l
 "map <LEADER>r <C-w>r
 
 " Disabling the default s key
@@ -212,10 +214,10 @@ map sn :set nosplitright<CR>:vsplit<CR>:set splitright<CR>
 map si :set splitright<CR>:vsplit<CR>
 
 " Resize splits with arrow keys
-map <up> :res +5<CR>
-map <down> :res -5<CR>
-map <left> :vertical resize-5<CR>
-map <right> :vertical resize+5<CR>
+"map <up> :res +5<CR>
+"map <down> :res -5<CR>
+"map <left> :vertical resize-5<CR>
+"map <right> :vertical resize+5<CR>
 
 " Place the two screens up and down
 noremap sh <C-w>t<C-w>K
@@ -329,7 +331,7 @@ Plug 'w0rp/ale'
 
 " Auto Complete
 " Plug 'Valloric/YouCompleteMe'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'davidhalter/jedi-vim'
 
 " Undo Tree
@@ -405,7 +407,7 @@ source ~/.vim/_machine_specific.vim
 " ===
 " === Dress up my vim
 " ===
-map <LEADER>c1 :set background=dark<CR>:colorscheme snazzy<CR>:AirlineTheme dracula<CR>
+" map <LEADER>c1 :set background=dark<CR>:colorscheme snazzy<CR>:AirlineTheme dracula<CR>
 map <LEADER>c2 :set background=light<CR>:colorscheme ayu<CR>:AirlineTheme ayu_light<CR>
 
 set termguicolors     " enable true colors support
@@ -415,7 +417,7 @@ let ayucolor="light"  " for light version of theme
 colorscheme snazzy
 let g:SnazzyTransparent = 1
 set background=dark
-let g:airline_theme='dracula'
+" let g:airline_theme='dracula'
 
 let g:lightline = {
   \     'active': {
